@@ -61,4 +61,4 @@ Initial release
 
 == Notes ==
 
-Only the default and dark color schemes are accessibility ready.
+https://docs.classicpress.net/plugin-guidelines/directory-requirements/
