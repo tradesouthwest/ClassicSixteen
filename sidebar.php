@@ -2,8 +2,7 @@
 /**
  * The template for the sidebar containing the main widget area
  *
- * @package WordPress | CalssicPress
- * @subpackage ClassicSixteen
+ * @package ClassicSixteen
  * @since ClassicSixteen 1.0
  */
 ?>

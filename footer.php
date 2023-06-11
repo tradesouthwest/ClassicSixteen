@@ -4,8 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package WordPress | ClassicPress
- * @subpackage ClassicSixteen
+ * @package ClassicSixteen
  * @since ClassicSixteen 1.0
  */
 ?>

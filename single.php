@@ -2,8 +2,7 @@
 /**
  * The template for displaying all single posts and attachments
  *
- * @package WordPress | ClassicPress
- * @subpackage ClassicSixteen
+ * @package ClassicSixteen
  * @since ClassicSixteen 1.0
  */
 

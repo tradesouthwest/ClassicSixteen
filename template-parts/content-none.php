@@ -2,8 +2,7 @@
 /**
  * The template part for displaying a message that posts cannot be found
  *
- * @package WordPress | ClassicPress
- * @subpackage ClassicSixteen
+ * @package ClassicSixteen
  * @since ClassicSixteen 1.0
  */
 ?>

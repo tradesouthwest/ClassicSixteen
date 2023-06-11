@@ -2,8 +2,7 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @package WordPress | ClassicPress
- * @subpackage ClassicSixteen
+ * @package ClassicSixteen
  * @since ClassicSixteen 1.0
  */
 

@@ -2,8 +2,7 @@
 /**
  * The template part for displaying an Author biography
  *
- * @package WordPress | ClassicPress
- * @subpackage ClassicSixteen
+ * @package ClassicSixteen
  * @since ClassicSixteen 1.0
  */
 ?>

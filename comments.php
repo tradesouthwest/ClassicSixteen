@@ -5,8 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package WordPress | ClassicPress
- * @subpackage ClassicSixteen
+ * @package ClassicSixteen
  * @since ClassicSixteen 1.0
  */
 

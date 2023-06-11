@@ -22,8 +22,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package ClassicPress
- * @subpackage ClassicSixteen
+ * @package ClassicSixteen
  * @since 1.0.0
  */
 
