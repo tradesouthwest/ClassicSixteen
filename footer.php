@@ -40,8 +40,26 @@
 					?>
 				</nav><!-- .social-navigation -->
 			<?php endif; ?>
+			
+			
 
 			<div class="site-info">
+			<div class="footer-widget-section">
+				<div class="footer-item-left">
+				    <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+					<div id="secondary" class="sidebar widget-area" role="complementary">
+						<?php dynamic_sidebar( 'sidebar-2' ); ?>
+					</div><!-- .sidebar .widget-area -->
+				    <?php endif; ?>
+				</div>
+				<div class="footer-item-right">
+				    <?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
+					<div id="secondary" class="sidebar widget-area" role="complementary">
+						<?php dynamic_sidebar( 'sidebar-3' ); ?>
+					</div><!-- .sidebar .widget-area -->
+				    <?php endif; ?>
+				</div>
+			</div>
 				<?php
 					/**
 					 * Fires before the classicsixteen footer text for footer customization.
