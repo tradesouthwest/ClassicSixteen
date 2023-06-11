@@ -4,8 +4,7 @@
  *
  * Displays all of the head element and everything up until the "site-content" div.
  *
- * @package WordPress | ClassicPress
- * @subpackage ClassicSixteen
+ * @package ClassicSixteen
  * @since ClassicSixteen 1.0
  */
 
@@ -22,6 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="page" class="site">
 	<div class="site-inner">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'classicsixteen' ); ?></a>
