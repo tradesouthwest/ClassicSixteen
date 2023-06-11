@@ -294,7 +294,7 @@ function classic_sixteen_theme_body_classes( $classes ) {
 /**
  * Converts a HEX value to RGB.
  *
- * @since Twenty Sixteen 1.0
+ * @since Twenty Sixteen 1.0.1 Reserved.
  *
  * @param string $color The original color, in 3- or 6-digit hexadecimal form.
  * @return array Array containing RGB (red, green, and blue) values for the given
