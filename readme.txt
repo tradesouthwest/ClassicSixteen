@@ -53,6 +53,8 @@ Source: https://github.com/aFarkas/html5shiv
 
 = 1.0.1 =
 * reduced padding in header
+* fixed search widget
+* removed all genericons
 
 = 1.0 =
 * Released: June 8, 2023
