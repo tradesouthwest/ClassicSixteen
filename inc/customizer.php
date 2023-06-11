@@ -2,15 +2,14 @@
 /**
  * Classic Sixteen Customizer functionality
  *
- * @package ClassicPress
- * @subpackage Classic_Sixteen
+ * @package ClassicSixteen
  * @since Classic Sixteen 1.0
  */
 
 /**
  * Sets up the WordPress core custom header and custom background features.
  *
- * @since Classic Sixteen 1.0
+ * @since ClassicSixteen 1.0
  *
  * @see classicsixteen_header_style()
  */
@@ -20,13 +19,8 @@ function classicsixteen_custom_header_and_background() {
 	/**
 	 * Filter the arguments used when adding 'custom-background' support in Classic Sixteen.
 	 *
-	 * @since Classic Sixteen 1.0
+	 * @since ClassicSixteen 1.0
 	 *
-	 * @param array $args {
-	 *     An array of custom-background support arguments.
-	 *
-	 *     @type string $default-color Default color of the background.
-	 * }
 	 */
 	add_theme_support(
 		'custom-background',
