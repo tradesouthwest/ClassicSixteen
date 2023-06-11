@@ -4,8 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package WordPress | ClassicPress
- * @subpackage Classic_Sixteen
+ * @package ClassicSixteen
  * @since ClassicSixteen 1.0
  */
 
