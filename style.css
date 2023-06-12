@@ -2493,14 +2493,12 @@ body.search-no-results .page-header {
 	height:100%;
 	margin-top: 15px;
 	width: 100%;
-	background: #efefef;
 	text-align:left;
 }
 
 .footer-item-left{
 	padding: 1em;
 	width: auto;
-	background: #ffa;
 	width: 50%;
 	float: left;
 }

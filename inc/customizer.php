@@ -3,7 +3,7 @@
  * Classic Sixteen Customizer functionality
  *
  * @package ClassicSixteen
- * @since Classic Sixteen 1.0
+ * @since ClassicSixteen 1.0
  */
 
 /**
@@ -43,7 +43,7 @@ add_action( 'after_setup_theme', 'classicsixteen_custom_header_and_background' )
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
 function classicsixteen_customize_register( $wp_customize ) {
-	$color_scheme = 'default';
+	//$color_scheme = 'default';
 
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
@@ -102,7 +102,7 @@ function classicsixteen_customize_preview_js() {
 	wp_enqueue_script( 'classicsixteen-customize-preview', 
 						get_template_directory_uri() . '/js/customize-preview.js', 
 						array( 'customize-preview' ), 
-						'20160816', 
+						'20230610', 
 						true 
 					);
 }
