@@ -919,7 +919,6 @@ a:active {
 }
 
 .social-navigation a {
-	border: 1px solid #d1d1d1;
 	color: #1a1a1a;
 	display: block;
 	height: 35px;
@@ -2510,13 +2509,13 @@ body.search-no-results .page-header {
 	width: 50%;
 }
 
+#secondary.sidebar,
+#primary.sidebar {
+	float: right;
+	padding: 0;
+	max-width: 25%;
+}
 
-	#secondary.sidebar,
-	#primary.sidebar {
-		float: right;
-padding: 0;
-max-width: 25%;
-	}
 .footer-widget-section #secondary.sidebar{
 	float: initial;
 	max-width: 100%;

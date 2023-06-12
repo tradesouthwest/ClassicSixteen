@@ -40,10 +40,8 @@
 					?>
 				</nav><!-- .social-navigation -->
 			<?php endif; ?>
-			
-			
+			<div class="clear"></div>
 
-			<div class="site-info">
 			<div class="footer-widget-section">
 				<div class="footer-item-left">
 				    <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
@@ -60,7 +58,9 @@
 				    <?php endif; ?>
 				</div>
 			</div>
-				<?php
+			
+			<div class="site-info">
+				<p><?php
 					/**
 					 * Fires before the classicsixteen footer text for footer customization.
 					 *
@@ -79,7 +79,7 @@
 					/* translators: %s: WordPress */
 					printf( __( 'Proudly powered by %s', 'classicsixteen' ), 'ClassicPress' );
 					?>
-				</a>
+				</a></p>
 			</div><!-- .site-info -->
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
