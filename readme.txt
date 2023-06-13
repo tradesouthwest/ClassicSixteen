@@ -43,18 +43,13 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Classic Sixteen Theme bundles the following third-party resources:
-
-HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
-Licenses: MIT/GPL2
-Source: https://github.com/aFarkas/html5shiv
-
 == Changelog ==
 
 = 1.0.1 =
 * reduced padding in header
 * fixed search widget
 * removed all genericons
+* remove shiv credits
 
 = 1.0 =
 * Released: June 8, 2023
@@ -63,4 +58,3 @@ Initial release
 
 == Notes ==
 
-https://docs.classicpress.net/plugin-guidelines/directory-requirements/
