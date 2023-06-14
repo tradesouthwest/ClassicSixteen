@@ -77,7 +77,7 @@
 				<a href="<?php echo esc_url( __( 'https://www.classicpress.net/', 'classicsixteen' ) ); ?>" class="imprint">
 					<?php
 					/* translators: %s: WordPress */
-					printf( __( 'Proudly powered by %s', 'classicsixteen' ), 'ClassicPress' );
+					printf( esc_attr__( 'Proudly powered by %s', 'classicsixteen' ), 'ClassicPress' );
 					?>
 				</a></p>
 			</div><!-- .site-info -->

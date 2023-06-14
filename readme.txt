@@ -44,6 +44,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 == Changelog ==
+= 1.0.2 =
+* added header uptos
+* multiple escapes
+* 404 & search tmplts fix submit button
 
 = 1.0.1 =
 * reduced padding in header
