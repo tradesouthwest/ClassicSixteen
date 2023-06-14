@@ -5,6 +5,8 @@ Author:      Tradesouthwest
 Author URI:  https://tradesouthwest.com/
 Description: ClassicSixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. ClassicSixteen is based on WordPress theme Twenty Sixteen to conform with ClassicPress standards. Fluid grid using a mobile-first approach, and impeccable polish in every detail. ClassicSixteen will make your ClassicPress look beautiful universally.
 Version:     1.0.1
+Requires PHP: 7.2
+Requires CP: 1.4
 License:     GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:        one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -13,8 +15,6 @@ Text Domain: classicsixteen
 This theme, like ClassicPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-
-
 /**
  * Table of Contents
  *
