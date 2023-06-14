@@ -24,14 +24,14 @@ get_header(); ?>
 			}
 
 			if ( is_singular( 'attachment' ) ) {
-				// Parent post navigation.
+				// Parent post navigation. //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				the_post_navigation(
 					array(
 						'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'classicsixteen' ),
 					)
 				);
 			} elseif ( is_singular( 'post' ) ) {
-				// Previous/next post navigation.
+				// Previous/next post navigation. //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				the_post_navigation(
 					array(
 						'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'classicsixteen' ) . '</span> ' .
