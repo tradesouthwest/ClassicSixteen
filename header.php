@@ -24,7 +24,7 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<div class="site-inner">
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'classicsixteen' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'classicsixteen' ); ?></a>
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-main">
@@ -41,16 +41,16 @@
 					$description = get_bloginfo( 'description', 'display' );
 					if ( $description || is_customize_preview() ) :
 						?>
-						<p class="site-description"><?php echo $description; ?></p>
+						<p class="site-description"><?php echo esc_html__( $description ); ?></p>
 					<?php endif; ?>
 				</div><!-- .site-branding -->
 
 				<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
-					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'classicsixteen' ); ?></button>
+					<button id="menu-toggle" class="menu-toggle"><?php esc_html_e( 'Menu', 'classicsixteen' ); ?></button>
 
 					<div id="site-header-menu" class="site-header-menu">
 						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'classicsixteen' ); ?>">
+							<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'classicsixteen' ); ?>">
 								<?php
 									wp_nav_menu(
 										array(
@@ -63,7 +63,7 @@
 						<?php endif; ?>
 
 						<?php if ( has_nav_menu( 'social' ) ) : ?>
-							<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'classicsixteen' ); ?>">
+							<nav id="social-navigation" class="social-navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'classicsixteen' ); ?>">
 								<?php
 									wp_nav_menu(
 										array(
