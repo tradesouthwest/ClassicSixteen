@@ -31,12 +31,12 @@ if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
 		if ( in_array( get_post_type(), array( 'post', 'attachment' ), true ) ) {
 			classicsixteen_entry_date();
 		}
-
 		$format = get_post_format();
 		if ( current_theme_supports( 'post-formats', $format ) ) {
 			printf(
 				'<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
-				sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'classicsixteen' ) ),
+					sprintf( '<span class="screen-reader-text">%s </span>', 
+						esc_html_x( 'Format', 'Used before post format.', 'classicsixteen' ) ), 
 				esc_url( get_post_format_link( $format ) ),
 				get_post_format_string( $format )
 			);
@@ -48,8 +48,9 @@ if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
 
 		if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
-			/* translators: %s: Name of current post */
-			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'classicsixteen' ), get_the_title() ) );
+			/* translators: %s: Name of current post */ //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
+			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'classicsixteen' ), 
+									get_the_title() ) );
 			echo '</span>';
 		}
 	}
@@ -58,7 +59,6 @@ endif;
 if ( ! function_exists( 'classicsixteen_entry_date' ) ) :
 	/**
 	 * Prints HTML with date information for current post.
-	 *
 	 * Create your own classicsixteen_entry_date() function to override in a child theme.
 	 *
 	 * @since Classic Sixteen 1.0
@@ -96,20 +96,20 @@ if ( ! function_exists( 'classicsixteen_entry_taxonomies' ) ) :
 	 * @since Classic Sixteen 1.0
 	 */
 	function classicsixteen_entry_taxonomies() {
-		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'classicsixteen' ) );
+		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'classicsixteen' ) 
+								); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
 		if ( $categories_list && classicsixteen_categorized_blog() ) {
-			printf(
-				'<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-				_x( 'Categories', 'Used before category names.', 'classicsixteen' ),
+			printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				esc_html_x( 'Categories', 'Used before category names.', 'classicsixteen' ),
 				$categories_list
 			);
 		}
-
+									//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
 		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'classicsixteen' ) );
 		if ( $tags_list && ! is_wp_error( $tags_list ) ) {
 			printf(
 				'<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-				_x( 'Tags', 'Used before tag names.', 'classicsixteen' ),
+				esc_html_x( 'Tags', 'Used before tag names.', 'classicsixteen' ),
 				$tags_list
 			);
 		}
@@ -191,7 +191,7 @@ if ( ! function_exists( 'classicsixteen_excerpt_more' ) && ! is_admin() ) :
 			'<a href="%1$s" class="more-link">%2$s</a>',
 			esc_url( get_permalink( get_the_ID() ) ),
 			/* translators: %s: Name of current post */
-			sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'classicsixteen' ), get_the_title( get_the_ID() ) )
+			sprintf( esc_attr__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'classicsixteen' ), get_the_title( get_the_ID() ) )
 		);
 		return ' &hellip; ' . $link;
 	}
