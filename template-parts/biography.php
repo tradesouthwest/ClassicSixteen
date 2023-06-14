@@ -31,7 +31,7 @@
 			<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
 				<?php
 				/* translators: %s: The post author display name */
-				printf( __( 'View all posts by %s', 'classicsixteen' ), get_the_author() );
+				printf( esc_attr__( 'View all posts by %s', 'classicsixteen' ), get_the_author() );
 				?>
 			</a>
 		</p><!-- .author-bio -->

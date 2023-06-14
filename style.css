@@ -697,7 +697,11 @@ input[type="search"].search-field {
 	top: 0;
 	width: 42px;
 }
-
+.search .search-submit,
+.error404 .search-submit{
+	right: 0px;
+	width: 100px;
+}
 
 /**
  * 6.0 - Navigation

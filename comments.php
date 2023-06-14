@@ -30,8 +30,8 @@ if ( post_password_required() ) {
 				printf( esc_attr_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'classicsixteen' ), get_the_title() );
 			} else {
 				printf(
-					/* translators: 1: number of comments, 2: post title */
-					esc_attr_nx(
+					/* translators: 1: number of comments, 2: post title */ 
+					_nx(                                         //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
 						'%1$s thought on &ldquo;%2$s&rdquo;',
 						'%1$s thoughts on &ldquo;%2$s&rdquo;',
 						$comments_number,
