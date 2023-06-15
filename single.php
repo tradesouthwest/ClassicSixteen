@@ -24,7 +24,6 @@ get_header(); ?>
 			}
 
 			if ( is_singular( 'attachment' ) ) {
-				// Parent post navigation. //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				the_post_navigation(
 					array(
 						'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'classicsixteen' ),

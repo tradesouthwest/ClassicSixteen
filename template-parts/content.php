@@ -21,12 +21,12 @@
 	<?php classicsixteen_post_thumbnail(); ?>
 
 	<div class="entry-content">
-		<?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
+		<?php 
 			the_content(
 				sprintf(
 					/* translators: %s: Name of current post */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'classicsixteen' ),
-					get_the_title()
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'classicsixteen' ), //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
+					esc_html( get_the_title() )
 				)
 			);
 

@@ -34,7 +34,7 @@
  * @since 1.0.0
  */
 
-// FAST LOADER References ( find @id in DocBlocks )
+// FAST LOADER References ( find #id in DocBlocks )
 // ------------------------- Actions ---------------------------
 // A1
 add_action( 'after_setup_theme',                  'classic_sixteen_theme_setup' );
