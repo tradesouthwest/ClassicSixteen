@@ -5,7 +5,7 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package ClassicSixteen
- * @since ClassicSixteen 1.0
+ * @since ClassicSixteen 1.0.3
  */
 
 if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
@@ -22,9 +22,9 @@ if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
 			printf(
 				'<span class="byline"><span class="author vcard">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n" href="%3$s">%4$s</a></span></span>',
 				get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
-				_x( 'Author', 'Used before post author name.', 'classicsixteen' ),
+				esc_html_x( 'Author', 'Used before post author name.', 'classicsixteen' ),
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				get_the_author()
+				esc_html__( get_the_author() )
 			);
 		}
 
@@ -37,8 +37,8 @@ if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
 				'<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
 					sprintf( '<span class="screen-reader-text">%s </span>', 
 						esc_html_x( 'Format', 'Used before post format.', 'classicsixteen' ) ), 
-				esc_url( get_post_format_link( $format ) ),
-				get_post_format_string( $format )
+						esc_url( get_post_format_link( $format ) ),
+						get_post_format_string( $format )
 			);
 		}
 
@@ -48,9 +48,9 @@ if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
 
 		if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
-			/* translators: %s: Name of current post */ //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
-			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'classicsixteen' ), 
-									get_the_title() ) );
+			/* translators: %s: Name of current post */ 
+			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'classicsixteen' ), //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
+			wp_kses_post( get_the_title() ) ) );
 			echo '</span>';
 		}
 	}
@@ -64,18 +64,18 @@ if ( ! function_exists( 'classicsixteen_entry_date' ) ) :
 	 * @since Classic Sixteen 1.0
 	 */
 	function classicsixteen_entry_date() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>a';
+		
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf(
 			$time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			get_the_date(),
+			esc_attr( get_the_date( 'c' ) ), //integer and presented as a binary number. 
+			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
-			get_the_modified_date()
+			esc_html( get_the_modified_date() )
 		);
 
 		printf(
@@ -96,16 +96,15 @@ if ( ! function_exists( 'classicsixteen_entry_taxonomies' ) ) :
 	 * @since Classic Sixteen 1.0
 	 */
 	function classicsixteen_entry_taxonomies() {
-		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'classicsixteen' ) 
-								); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
+		$categories_list = wp_kses_post( get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'classicsixteen' ) ) );
 		if ( $categories_list && classicsixteen_categorized_blog() ) {
 			printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
 				esc_html_x( 'Categories', 'Used before category names.', 'classicsixteen' ),
 				$categories_list
 			);
 		}
-									//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
-		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'classicsixteen' ) );
+									
+		$tags_list = wp_kses_post( get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'classicsixteen' ) ) );
 		if ( $tags_list && ! is_wp_error( $tags_list ) ) {
 			printf(
 				'<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
@@ -167,9 +166,9 @@ if ( ! function_exists( 'classicsixteen_excerpt' ) ) :
 
 		if ( has_excerpt() || is_search() ) :
 			?>
-			<div class="<?php echo $class; ?>">
-				<?php the_excerpt(); ?>
-			</div><!-- .<?php echo $class; ?> -->
+			<div class="<?php echo $class; ?>"><?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped $string escp'd on argument 
+		    ?>	<?php the_excerpt(); ?>
+			</div>
 			<?php
 		endif;
 	}
@@ -187,13 +186,12 @@ if ( ! function_exists( 'classicsixteen_excerpt_more' ) && ! is_admin() ) :
 	 * @return string 'Continue reading' link prepended with an ellipsis.
 	 */
 	function classicsixteen_excerpt_more() {
-		$link = sprintf(
-			'<a href="%1$s" class="more-link">%2$s</a>',
-			esc_url( get_permalink( get_the_ID() ) ),
+		$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>', esc_url( get_permalink( get_the_ID() ) ),
 			/* translators: %s: Name of current post */
-			sprintf( esc_attr__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'classicsixteen' ), get_the_title( get_the_ID() ) )
+			sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'classicsixteen' ), 
+				esc_html( get_the_title( get_the_ID() ) ) ) 
 		);
-		return ' &hellip; ' . $link;
+		return ' &hellip; ' . $link; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped maybe wp_kses_post again
 	}
 	add_filter( 'excerpt_more', 'classicsixteen_excerpt_more' );
 endif;

@@ -17,13 +17,13 @@ get_header(); ?>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'classicsixteen' ); ?></p>
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'classicsixteen' ); ?></p>
 
 					<?php get_search_form(); ?>
 				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+			</section>
 
-		</main><!-- .site-main -->
+		</main>
 
 		<?php get_sidebar( 'content-bottom' ); ?>
 

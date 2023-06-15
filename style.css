@@ -4,7 +4,7 @@ Theme URI:   https://classicpress-themes/cp16
 Author:      Tradesouthwest
 Author URI:  https://tradesouthwest.com/
 Description: ClassicSixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. ClassicSixteen is based on WordPress theme Twenty Sixteen to conform with ClassicPress standards. Fluid grid using a mobile-first approach, and impeccable polish in every detail. ClassicSixteen will make your ClassicPress look beautiful universally.
-Version:     1.0.2
+Version:     1.0.3
 Requires PHP: 7.2
 Requires CP: 1.4
 License:     GNU General Public License v2 or later
@@ -1067,12 +1067,12 @@ a:active {
 }
 
 .pagination .nav-links:before {
-	content: "\f429";
+	content: "<";
 	right: -1px;
 }
 
 .pagination .nav-links:after {
-	content: "\f430";
+	content: ">";
 	right: 55px;
 }
 
@@ -1137,7 +1137,7 @@ a:active {
 }
 
 .pagination .prev:before {
-	content: "\f430";
+	content: "<";
 	left: -1px;
 	top: -1px;
 }
@@ -1147,7 +1147,7 @@ a:active {
 }
 
 .pagination .next:before {
-	content: "\f429";
+	content: ">";
 	right: -1px;
 	top: -1px;
 }
@@ -1948,6 +1948,10 @@ body:not(.search-results) .entry-summary > :last-child,
 	text-transform: uppercase;
 }
 
+.home-excerpt figure img{
+	margin: 1em auto;
+	box-shadow: 0px 5px 5px 0px #adaeaf;
+}
 /**
  * IE8 and earlier will drop any block with CSS3 selectors.
  * Do not combine these styles with the next block.
@@ -2156,7 +2160,7 @@ body.search-no-results .page-header {
 }
 
 .bypostauthor > article .fn:after {
-	content: "\f304";
+	content: "*";
 	left: 3px;
 	position: relative;
 	top: 5px;
@@ -2305,7 +2309,7 @@ body.search-no-results .page-header {
 }
 
 .comment-reply-title small a:before {
-	content: "\f405";
+	content: "+";
 	font-size: 32px;
 	position: relative;
 	top: -5px;
