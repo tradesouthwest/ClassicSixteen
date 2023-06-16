@@ -44,8 +44,8 @@ get_header(); ?>
 			// Previous/next page navigation.
 			the_posts_pagination(
 				array(
-					'prev_text'          => __( 'Previous page', 'classicsixteen' ),
-					'next_text'          => __( 'Next page', 'classicsixteen' ),
+					'prev_text'          => esc_html__( 'Previous page', 'classicsixteen' ),
+					'next_text'          => esc_html__( 'Next page', 'classicsixteen' ),
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'classicsixteen' ) . ' </span>',
 				)
 			);

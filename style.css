@@ -2095,7 +2095,13 @@ body.search-no-results .page-header {
 .archive .format-status .entry-title {
 	display: none;
 }
-
+.entry-title-article{
+	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-left: 0;
+}
+.entry-title-article a{
+	color: currentColor
+}
 
 /**
  * 11.4 - Comments
@@ -2161,9 +2167,7 @@ body.search-no-results .page-header {
 
 .bypostauthor > article .fn:after {
 	content: "*";
-	left: 3px;
-	position: relative;
-	top: 5px;
+	margin-top: -3px;
 }
 
 .comment-metadata,

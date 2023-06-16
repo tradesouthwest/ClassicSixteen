@@ -21,8 +21,8 @@ get_header(); ?>
 
 					<nav id="image-navigation" class="navigation image-navigation">
 						<div class="nav-links">
-							<div class="nav-previous"><?php previous_image_link( false, __( 'Previous Image', 'classicsixteen' ) ); ?></div>
-							<div class="nav-next"><?php next_image_link( false, __( 'Next Image', 'classicsixteen' ) ); ?></div>
+							<div class="nav-previous"><?php previous_image_link( false, esc_html__( 'Previous Image', 'classicsixteen' ) ); ?></div>
+							<div class="nav-next"><?php next_image_link( false, esc_html__( 'Next Image', 'classicsixteen' ) ); ?></div>
 						</div><!-- .nav-links -->
 					</nav><!-- .image-navigation -->
 
@@ -43,7 +43,7 @@ get_header(); ?>
 							 */
 							$image_size = apply_filters( 'classicsixteen_attachment_size', 'large' );
 
-							echo wp_get_attachment_image( get_the_ID(), $image_size );
+							echo wp_get_attachment_image( get_the_ID(), esc_attr( $image_size ) );
 						?>
 
 						<?php classicsixteen_excerpt( 'entry-caption' ); ?>
@@ -54,11 +54,11 @@ get_header(); ?>
 						the_content();
 						wp_link_pages(
 							array(
-								'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'classicsixteen' ) . '</span>',
+								'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'classicsixteen' ) . '</span>',
 								'after'       => '</div>',
 								'link_before' => '<span>',
 								'link_after'  => '</span>',
-								'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'classicsixteen' ) . ' </span>%',
+								'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'classicsixteen' ) . ' </span>%',
 								'separator'   => '<span class="screen-reader-text">, </span>',
 							)
 						);
@@ -84,11 +84,11 @@ get_header(); ?>
 						edit_post_link(
 							sprintf(
 								/* translators: %s: Name of current post */
-								__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'classicsixteen' ),
-								get_the_title()
+                            __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'classicsixteen' ), //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped wp_kses_post not works
+								esc_html( get_the_title() )
 							),
 							'<span class="edit-link">',
-							'</span>'
+							'</span>' 
 						);
 						?>
 					</footer><!-- .entry-footer -->
@@ -103,7 +103,7 @@ get_header(); ?>
 				// Parent post navigation.
 				the_post_navigation(
 					array(
-						'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'classicsixteen' ),
+						'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'classicsixteen' ), //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped in array
 					)
 				);
 				// End the loop.

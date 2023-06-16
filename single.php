@@ -26,18 +26,17 @@ get_header(); ?>
 			if ( is_singular( 'attachment' ) ) {
 				the_post_navigation(
 					array(
-						'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'classicsixteen' ),
+						'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'classicsixteen' ), //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped in array
 					)
 				);
 			} elseif ( is_singular( 'post' ) ) {
-				// Previous/next post navigation. //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				the_post_navigation(
 					array(
-						'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'classicsixteen' ) . '</span> ' .
-							'<span class="screen-reader-text">' . __( 'Next post:', 'classicsixteen' ) . '</span> ' .
+						'next_text' => '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Next', 'classicsixteen' ) . '</span> ' .
+							'<span class="screen-reader-text">' . esc_html__( 'Next post:', 'classicsixteen' ) . '</span> ' .
 							'<span class="post-title">%title</span>',
-						'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'classicsixteen' ) . '</span> ' .
-							'<span class="screen-reader-text">' . __( 'Previous post:', 'classicsixteen' ) . '</span> ' .
+						'prev_text' => '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Previous', 'classicsixteen' ) . '</span> ' .
+							'<span class="screen-reader-text">' . esc_html__( 'Previous post:', 'classicsixteen' ) . '</span> ' .
 							'<span class="post-title">%title</span>',
 					)
 				);

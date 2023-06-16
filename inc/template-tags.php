@@ -80,7 +80,7 @@ if ( ! function_exists( 'classicsixteen_entry_date' ) ) :
 
 		printf(
 			'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
-			_x( 'Posted on', 'Used before publish date.', 'classicsixteen' ),
+			esc_html_x( 'Posted on', 'Used before publish date.', 'classicsixteen' ),
 			esc_url( get_permalink() ),
 			$time_string
 		);
@@ -166,8 +166,8 @@ if ( ! function_exists( 'classicsixteen_excerpt' ) ) :
 
 		if ( has_excerpt() || is_search() ) :
 			?>
-			<div class="<?php echo $class; ?>"><?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped $string escp'd on argument 
-		    ?>	<?php the_excerpt(); ?>
+			<div class="<?php echo esc_attr( $class ); ?>">
+		    	<?php the_excerpt(); ?>
 			</div>
 			<?php
 		endif;
@@ -188,10 +188,10 @@ if ( ! function_exists( 'classicsixteen_excerpt_more' ) && ! is_admin() ) :
 	function classicsixteen_excerpt_more() {
 		$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>', esc_url( get_permalink( get_the_ID() ) ),
 			/* translators: %s: Name of current post */
-			sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'classicsixteen' ), 
+			sprintf( wp_kses_post( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'classicsixteen' ) ), 
 				esc_html( get_the_title( get_the_ID() ) ) ) 
 		);
-		return ' &hellip; ' . $link; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped maybe wp_kses_post again
+		return ' &hellip; ' . wp_kses_post( $link );
 	}
 	add_filter( 'excerpt_more', 'classicsixteen_excerpt_more' );
 endif;
