@@ -39,6 +39,7 @@ ClassicSixteen is distributed under the terms of the GNU GPL
 
 # Notes
 
+<!--https://github.com/tradesouthwest/ClassicSixteen.git-->
 Theme is not fully accessibility ready.
 Things we removed from TwentySixteen:
 - Most of the IE support CSS and shivs

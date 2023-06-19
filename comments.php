@@ -31,15 +31,15 @@ if ( post_password_required() ) {
 				'comments title', 'classicsixteen' ), wp_kses_post( get_the_title() ) );
 			} else {
 				printf(
-					/* translators: 1: number of comments, 2: post title */ 
-					_nx(
+					/* translators: 1: number of comments, 2: post title */ /* https://core.trac.wordpress.org/ticket/37057#comment:15 */
+					_nx(                                     //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped see ticket above
 						'%1$s thought on &ldquo;%2$s&rdquo;',
 						'%1$s thoughts on &ldquo;%2$s&rdquo;',
 						$comments_number,
 						'comments title',
 						'classicsixteen'
 					),
-					number_format_i18n( $comments_number ),
+					number_format_i18n( absint( $comments_number ) ),
 					wp_kses_post( get_the_title() )
 				);
 			}

@@ -5,26 +5,26 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package ClassicSixteen
- * @since ClassicSixteen 1.0.3
+ * @since ClassicSixteen 1.0.4
  */
-
 if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags.
 	 *
 	 * Create your own classicsixteen_entry_meta() function to override in a child theme.
 	 *
-	 * @since Classic Sixteen 1.0
+	 * @since ClassicSixteen 1.0.4
 	 */
 	function classicsixteen_entry_meta() {
 		if ( 'post' === get_post_type() ) {
+			$author             = get_the_author();
 			$author_avatar_size = apply_filters( 'classicsixteen_author_avatar_size', 49 );
 			printf(
 				'<span class="byline"><span class="author vcard">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n" href="%3$s">%4$s</a></span></span>',
-				get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
+				get_avatar( get_the_author_meta( 'user_email' ), absint( $author_avatar_size ) ),
 				esc_html_x( 'Author', 'Used before post author name.', 'classicsixteen' ),
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_html__( get_the_author() )
+				esc_html__( $author )
 			);
 		}
 
@@ -38,7 +38,7 @@ if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
 					sprintf( '<span class="screen-reader-text">%s </span>', 
 						esc_html_x( 'Format', 'Used before post format.', 'classicsixteen' ) ), 
 						esc_url( get_post_format_link( $format ) ),
-						get_post_format_string( $format )
+						get_post_format_string( esc_html( $format ) )
 			);
 		}
 
@@ -64,10 +64,10 @@ if ( ! function_exists( 'classicsixteen_entry_date' ) ) :
 	 * @since Classic Sixteen 1.0
 	 */
 	function classicsixteen_entry_date() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>a';
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> - <time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf(
@@ -82,7 +82,7 @@ if ( ! function_exists( 'classicsixteen_entry_date' ) ) :
 			'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
 			esc_html_x( 'Posted on', 'Used before publish date.', 'classicsixteen' ),
 			esc_url( get_permalink() ),
-			$time_string
+			wp_strip_all_tags( $time_string )
 		);
 	}
 endif;
@@ -100,7 +100,7 @@ if ( ! function_exists( 'classicsixteen_entry_taxonomies' ) ) :
 		if ( $categories_list && classicsixteen_categorized_blog() ) {
 			printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
 				esc_html_x( 'Categories', 'Used before category names.', 'classicsixteen' ),
-				$categories_list
+				wp_kses_post( $categories_list )
 			);
 		}
 									
@@ -109,7 +109,7 @@ if ( ! function_exists( 'classicsixteen_entry_taxonomies' ) ) :
 			printf(
 				'<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
 				esc_html_x( 'Tags', 'Used before tag names.', 'classicsixteen' ),
-				$tags_list
+				wp_kses_post( $tags_list )
 			);
 		}
 	}
