@@ -3,13 +3,13 @@
  * The template part for displaying a message that posts cannot be found
  *
  * @package ClassicSixteen
- * @since ClassicSixteen 1.0
+ * @since ClassicSixteen 1.0.4
  */
 ?>
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'classicsixteen' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'classicsixteen' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -18,9 +18,9 @@
 			<p>
 			<?php
 			/* translators: %s: Link to post-new.php */
-			printf( esc_attr__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'classicsixteen' ), esc_url( admin_url( 'post-new.php' ) ) );
-			?>
-			</p>
+			printf( esc_attr__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'classicsixteen' ), 
+				esc_url( admin_url( 'post-new.php' ) ) );
+			?></p>
 
 		<?php elseif ( is_search() ) : ?>
 

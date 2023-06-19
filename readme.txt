@@ -4,7 +4,7 @@ Requires at least: 4.9
 Tested up to: 5.4
 Requires PHP: 7.2
 Requires CP: 1.4
-Version: 1.0.3
+Version: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -44,6 +44,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 == Changelog ==
+
+= 1.0.4 =
+* esc template-tags
+* corrected eol in biography
 
 = 1.0.3 =
 * more escps

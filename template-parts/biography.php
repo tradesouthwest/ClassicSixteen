@@ -3,7 +3,7 @@
  * The template part for displaying an Author biography
  *
  * @package ClassicSixteen
- * @since ClassicSixteen 1.0
+ * @since ClassicSixteen 1.0.4
  */
 ?>
 
@@ -13,7 +13,7 @@
 		/**
 		 * Filter the Classic Sixteen author bio avatar size.
 		 *
-		 * @since Classic Sixteen 1.0
+		 * @since ClassicSixteen 1.0
 		 *
 		 * @param int $size The avatar height and width size in pixels.
 		 */
@@ -33,9 +33,11 @@
 			<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
 				<?php
 				/* translators: %s: The post author display name */
-				printf( esc_html__( 'View all posts by %s', 'classicsixteen' ), esc_html( get_the_author() ); //author name
+				printf( esc_html__( 'View all posts by %s', 'classicsixteen' ), 
+					esc_html( get_the_author() ) //author name
+				);
 				?>
 			</a>
-		</p><!-- .author-bio -->
-	</div><!-- .author-description -->
+		</p>
+	</div>
 </div><!-- .author-info -->
