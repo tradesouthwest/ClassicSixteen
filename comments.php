@@ -28,19 +28,19 @@ if ( post_password_required() ) {
 			if ( '1' === $comments_number ) {
 				/* translators: %s: post title */
 				printf( esc_html_x( 'One thought on &ldquo;%s&rdquo;', 
-				'comments title', 'classicsixteen' ), wp_kses_post( get_the_title() ) );
+				'comments title', 'classicsixteen' ), get_the_title() );
 			} else {
 				printf(
 					/* translators: 1: number of comments, 2: post title */ /* https://core.trac.wordpress.org/ticket/37057#comment:15 */
-					_nx(                                     //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped see ticket above
+					classic_sixteen_sanitize_text( _nx(                                     
 						'%1$s thought on &ldquo;%2$s&rdquo;',
 						'%1$s thoughts on &ldquo;%2$s&rdquo;',
-						$comments_number,
+						absint( $comments_number ),
 						'comments title',
 						'classicsixteen'
-					),
+					) ),
 					number_format_i18n( absint( $comments_number ) ),
-					wp_kses_post( get_the_title() )
+					get_the_title()
 				);
 			}
 			?>
