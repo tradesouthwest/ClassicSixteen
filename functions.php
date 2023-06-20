@@ -323,6 +323,16 @@ function classic_sixteen_hex2rgb( $color ) {
 }
 
 /**
+ * Text sanitizer for outputs
+ * @since 1.0
+ * 
+ * @return string $input
+ */
+function classic_sixteen_sanitize_text( $input ) {
+    return wp_kses_post( force_balance_tags( $input ) );
+}
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';

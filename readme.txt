@@ -48,6 +48,7 @@ GNU General Public License for more details.
 = 1.0.4 =
 * esc template-tags
 * corrected eol in biography
+* created custom esc functions
 
 = 1.0.3 =
 * more escps

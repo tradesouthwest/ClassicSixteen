@@ -24,7 +24,7 @@ if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
 				get_avatar( get_the_author_meta( 'user_email' ), absint( $author_avatar_size ) ),
 				esc_html_x( 'Author', 'Used before post author name.', 'classicsixteen' ),
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_html__( $author )
+				esc_html( $author )
 			);
 		}
 
