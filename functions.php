@@ -324,7 +324,7 @@ function classic_sixteen_hex2rgb( $color ) {
 
 /**
  * Text sanitizer for outputs
- * @since 1.0
+ * @since 1.0.5
  * 
  * @return string $input
  */

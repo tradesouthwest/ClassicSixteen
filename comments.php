@@ -6,7 +6,7 @@
  * and the comment form.
  *
  * @package ClassicSixteen
- * @since ClassicSixteen 1.0
+ * @since ClassicSixteen 1.0.5
  */
 
 /*
