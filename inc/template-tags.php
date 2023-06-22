@@ -5,7 +5,7 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package ClassicSixteen
- * @since ClassicSixteen 1.0.4
+ * @since ClassicSixteen 1.0.6
  */
 if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
 	/**
@@ -67,7 +67,7 @@ if ( ! function_exists( 'classicsixteen_entry_date' ) ) :
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> - <time class="updated" datetime="%3$s">%4$s</time>';
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>  <time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf(
@@ -77,13 +77,13 @@ if ( ! function_exists( 'classicsixteen_entry_date' ) ) :
 			esc_attr( get_the_modified_date( 'c' ) ),
 			esc_html( get_the_modified_date() )
 		);
-
+		
 		printf(	'<span class="posted-on"><span class="screen-reader-text">%1$s </span>
 			<a href="%2$s" rel="bookmark">%3$s</a></span>',
-				_x( 'Posted on', 'Used before publish date.', 'classicsixteen' ),
+				esc_html_x( 'Posted on', 'Used before publish date.', 'classicsixteen' ),
 				esc_url( get_permalink() ),
-				cs16_esc( $time_string )
-		);
+				$time_string         //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		); 
 	}
 endif;
 
