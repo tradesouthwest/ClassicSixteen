@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 # Description 
 ClassicSixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. ClassicSixteen is based on WordPress theme Twenty Sixteen to conform with ClassicPress standards. Fluid grid using a mobile-first approach, and impeccable polish in every detail. ClassicSixteen will make your ClassicPress look beautiful universally. 
-Demo at https://classicpress-themes.com/cp16/
+Demo at http://classicpress-themes.com/cp16/
 
 # Features 
 
