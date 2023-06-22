@@ -78,11 +78,11 @@ if ( ! function_exists( 'classicsixteen_entry_date' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		printf(
-			'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
-			esc_html_x( 'Posted on', 'Used before publish date.', 'classicsixteen' ),
-			esc_url( get_permalink() ),
-			esc_html( $time_string )
+		printf(	'<span class="posted-on"><span class="screen-reader-text">%1$s </span>
+			<a href="%2$s" rel="bookmark">%3$s</a></span>',
+				_x( 'Posted on', 'Used before publish date.', 'classicsixteen' ),
+				esc_url( get_permalink() ),
+				cs16_esc( $time_string )
 		);
 	}
 endif;

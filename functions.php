@@ -331,7 +331,21 @@ function classic_sixteen_hex2rgb( $color ) {
 function classic_sixteen_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
 }
+function cs16_esc($filtered){
+	$found = false;
+	while ( preg_match( '/%[a-f0-9]{2}/i', $filtered, $match ) ) {
+		$filtered = str_replace( $match[0], '', $filtered );
+		$found    = true;
+	}
 
+	if ( $found ) {
+		// Strip out the whitespace that may now exist after removing percent-encoded characters.
+		$filtered = trim( preg_replace( '/ +/', ' ', $filtered ) );
+	}
+
+	return $filtered;
+
+}
 /**
  * Custom template tags for this theme.
  */
@@ -415,16 +429,3 @@ function classic_sixteen_theme_widget_tag_cloud_args( $args ) {
 
 	return $args;
 }
-
-/**
- * Proper ob_end_flush() for all levels
- *
- * This replaces the WordPress `wp_ob_end_flush_all()` function
- * with a replacement that doesn't cause PHP notices.
- */
-if (defined('WP_DEBUG') && true === WP_DEBUG) :
-    remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
-    add_action( 'shutdown', function() {
-    while ( @ob_end_flush() );
-    } );
-endif; 

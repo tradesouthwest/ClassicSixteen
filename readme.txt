@@ -4,14 +4,14 @@ Requires at least: 4.9
 Tested up to:      5.4
 Requires PHP:      7.2
 Requires CP:       1.4
-Version:           1.0.5
+Version:           1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
 
 == Description ==
 ClassicSixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. ClassicSixteen is based on WordPress theme Twenty Sixteen to conform with ClassicPress standards. Fluid grid using a mobile-first approach, and impeccable polish in every detail. ClassicSixteen will make your ClassicPress look beautiful universally. 
-Demo at https://classicpress-themes.com/cp16/
+Demo at http://classicpress-themes.com/cp16/
 
 * Mobile-first, Responsive Layout
 * Custom Colors
@@ -44,6 +44,9 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 == Changelog ==
+= 1.0.6 =
+* demo url fixed todo on hosting side 
+* escaped in 2 files
 
 = 1.0.5 =
 * esc template-tags & comments
