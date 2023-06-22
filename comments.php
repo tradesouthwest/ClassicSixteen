@@ -28,19 +28,20 @@ if ( post_password_required() ) {
 			if ( '1' === $comments_number ) {
 				/* translators: %s: post title */
 				printf( esc_html_x( 'One thought on &ldquo;%s&rdquo;', 
-				'comments title', 'classicsixteen' ), get_the_title() );
+				'comments title', 'classicsixteen' ), 
+					get_the_title() );        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
 			} else {
 				printf(
 					/* translators: 1: number of comments, 2: post title */ /* https://core.trac.wordpress.org/ticket/37057#comment:15 */
-					classic_sixteen_sanitize_text( _nx(                                     
+					esc_html( _nx(                                     
 						'%1$s thought on &ldquo;%2$s&rdquo;',
 						'%1$s thoughts on &ldquo;%2$s&rdquo;',
 						absint( $comments_number ),
 						'comments title',
 						'classicsixteen'
 					) ),
-					number_format_i18n( absint( $comments_number ) ),
-					get_the_title()
+					esc_html( number_format_i18n( $comments_number ) ),
+					get_the_title()        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
 				);
 			}
 			?>
