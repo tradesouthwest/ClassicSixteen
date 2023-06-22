@@ -41,16 +41,16 @@ if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
 						get_post_format_string( esc_html( $format ) )
 			);
 		}
-
 		if ( 'post' === get_post_type() ) {
 			classicsixteen_entry_taxonomies();
 		}
-
 		if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
 			/* translators: %s: Name of current post */ 
-			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'classicsixteen' ), //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
-			wp_kses_post( get_the_title() ) ) );
+			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'classicsixteen' ), 
+				get_the_title()         //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
+				) 
+			);
 			echo '</span>';
 		}
 	}
@@ -82,7 +82,7 @@ if ( ! function_exists( 'classicsixteen_entry_date' ) ) :
 			'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
 			esc_html_x( 'Posted on', 'Used before publish date.', 'classicsixteen' ),
 			esc_url( get_permalink() ),
-			wp_strip_all_tags( $time_string )
+			esc_html( $time_string )
 		);
 	}
 endif;
