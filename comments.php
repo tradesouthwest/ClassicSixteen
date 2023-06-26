@@ -6,7 +6,7 @@
  * and the comment form.
  *
  * @package ClassicSixteen
- * @since ClassicSixteen 1.0.6
+ * @since ClassicSixteen 1.0.7
  */
 
 /*
@@ -18,22 +18,22 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-
 <div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				$comments_number = get_comments_number();
+			$comments_number = get_comments_number();
 			if ( '1' === $comments_number ) {
 				/* translators: %s: post title */
 				printf( esc_html_x( 'One thought on &ldquo;%s&rdquo;', 
 				'comments title', 'classicsixteen' ), 
-					get_the_title() );        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
+					esc_html( get_the_title() )
+			    );
 			} else {
 				printf(
-					/* translators: 1: number of comments, 2: post title */ /* https://core.trac.wordpress.org/ticket/37057#comment:15 */
-					esc_html( _nx(                                     
+					/* translators: 1: number of comments, 2: post title */ 
+						esc_html( _nx( 
 						'%1$s thought on &ldquo;%2$s&rdquo;',
 						'%1$s thoughts on &ldquo;%2$s&rdquo;',
 						absint( $comments_number ),
@@ -41,7 +41,7 @@ if ( post_password_required() ) {
 						'classicsixteen'
 					) ),
 					esc_html( number_format_i18n( $comments_number ) ),
-					get_the_title()        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped function
+					esc_html( get_the_title() ) 
 				);
 			}
 			?>

@@ -44,6 +44,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 == Changelog ==
+
+= 1.0.7 =
+* fixed i18n in comments.php
+
 = 1.0.6 =
 * demo url fixed todo on hosting side 
 * escaped in 2 files
