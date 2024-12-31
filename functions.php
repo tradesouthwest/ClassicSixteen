@@ -120,20 +120,17 @@ function classic_sixteen_theme_setup() {
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 *//* 
-		add_theme_support(
-			'html5',
-			array(
+		 * to output valid HTML5. Only used on CP < v2.0
+		 */ 
+		if ( function_exists( 'is_classicpress' ) && version_compare( '2.0', $cp_version, '<' ) ) {
+			add_theme_support( 'html5', array(
 				'search-form',
 				'comment-form',
 				'comment-list',
 				'gallery',
 				'caption',
-				'script',
-				'style',
-			)
-		); */
+			)); 
+		}
 
 		/*
 		 * Enable support for Post Formats.
