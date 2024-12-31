@@ -130,7 +130,7 @@ function classic_sixteen_theme_setup() {
 				'gallery',
 				'caption',
 			)); 
-		}
+		} 
 
 		/*
 		 * Enable support for Post Formats.
