@@ -121,7 +121,7 @@ function classic_sixteen_theme_setup() {
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
-		 */
+		 *//* 
 		add_theme_support(
 			'html5',
 			array(
@@ -133,7 +133,7 @@ function classic_sixteen_theme_setup() {
 				'script',
 				'style',
 			)
-		);
+		); */
 
 		/*
 		 * Enable support for Post Formats.
