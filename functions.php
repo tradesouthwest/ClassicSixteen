@@ -117,7 +117,7 @@ function classic_sixteen_theme_setup() {
 				'social'  => __( 'Social Links Menu', 'classicsixteen' ),
 			)
 		);
-
+/*
 		if ( function_exists( 'is_classicpress' ) && version_compare( '2.0', $cp_version, '<' ) ) {
 			add_theme_support( 'html5', array(
 				'search-form',
@@ -127,7 +127,7 @@ function classic_sixteen_theme_setup() {
 				'caption',
 			)); 
 		}
-
+*/
 		/*
 		 * Enable support for Post Formats.
 		 *
