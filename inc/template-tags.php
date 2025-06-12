@@ -38,7 +38,7 @@ if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
 					sprintf( '<span class="screen-reader-text">%s </span>', 
 						esc_html_x( 'Format', 'Used before post format.', 'classicsixteen' ) ), 
 						esc_url( get_post_format_link( $format ) ),
-						get_post_format_string( esc_html( $format ) )
+						esc_html( get_post_format_string( esc_html( $format ) ) )
 			);
 		}
 		if ( 'post' === get_post_type() ) {
