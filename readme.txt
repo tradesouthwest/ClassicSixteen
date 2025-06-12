@@ -44,6 +44,8 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 == Changelog ==
+= 1.0.10 =
+* Fixed template-tags esc
 
 = 1.0.7 =
 * fixed i18n in comments.php
