@@ -5,7 +5,7 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package ClassicSixteen
- * @since ClassicSixteen 1.0.6
+ * @since ClassicSixteen 1.0.10
  */
 if ( ! function_exists( 'classicsixteen_entry_meta' ) ) :
 	/**
